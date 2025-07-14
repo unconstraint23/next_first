@@ -1,4 +1,6 @@
-import React, { memo, useEffect, useState } from 'react'
+'use client'
+
+import { memo, useEffect, useState } from 'react'
 
 type Todo = {
   userId: number
