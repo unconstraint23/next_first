@@ -1,15 +1,21 @@
-import Image from "next/image";
+import https from 'https';
 export async function queryData() {
+   
      const result = await fetch('https://jsonplaceholder.typicode.com/todos/1', {
-      cache: "no-store"
+      cache: "no-store",
+      
      })
      const postData = await result.json()
         return postData
     }
 
 export default async function Home() {
-  
-  const res = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+  await new Promise((res) => setTimeout(res, 2000));
+  const agent = new https.Agent({ rejectUnauthorized: false });
+  const res = await fetch('https://jsonplaceholder.typicode.com/todos/1', {
+    cache: "no-store",
+    agent
+  })
   const data = await res.json();
 
 

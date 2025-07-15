@@ -5,8 +5,8 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-export default function SliderPage() {
-    
+export default async function SliderPage() {
+    await new Promise((res) => setTimeout(res, 2000));
   return (
     <div>
       <h2>SliderPage</h2>
